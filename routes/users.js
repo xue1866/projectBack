@@ -12,10 +12,15 @@ router.get("/login", async function (req, res, next) {
   console.log("数据库字段:", Object.keys(usersModel.schema.obj));
   console.log("数据库字段:",typeof (Object.keys(usersModel.schema.obj)[0]));
   let user = await usersModel.findOne({
-    "user": req.query.user,
-    "pwd": req.query.pwd
+    user: req.query.user,
+    pwd: req.query.pwd
+  });
+  let user1 = await usersModel.findOne({
+    user: "admin",
+    pwd: "admin"
   });
   console.log("user:",user);
+  console.log("user1:",user1);
   
   if (user) {
     res.send({
