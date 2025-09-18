@@ -6,10 +6,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const routes = require("./routes");
 var app = express();
+var http = require('http');
 let  startWebSocket  = require('./websocket/server')
 var server = http.createServer(app);
 var usersRouter = require('./routes/users');
-var http = require('http');
+
 
 require('../websocket/server')(server);
 app.use(cors({
