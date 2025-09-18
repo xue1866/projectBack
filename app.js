@@ -18,7 +18,6 @@ const allowedOrigin = "https://project-fron-git-main-xue-d11ae8a6.vercel.app" ||
 
 app.use(cors({
   origin: allowedOrigin,
-  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 // 启动 WebSocket 服务
