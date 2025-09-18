@@ -1,9 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://xuejiakang69_db_user:xuejiakang69_db_user@cluster0.xg22ne5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect("mongodb+srv://xuejiakang69_db_user:xB9nqawFZEOjV8Dd@cluster0.p7ceyb5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 .then(() => {
   console.log("✅ 数据库连接成功");
 })
