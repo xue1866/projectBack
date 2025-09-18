@@ -13,8 +13,12 @@ var usersRouter = require('./routes/users');
 
 
 require('./websocket/server')(server);
+
+const allowedOrigin = "https://project-fron-git-main-xue-d11ae8a6.vercel.app" || "http://localhost:3000";
+
 app.use(cors({
-  origin: ["https://your-frontend.vercel.app"], // 允许的前端地址
+  origin: allowedOrigin,
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 // 启动 WebSocket 服务
