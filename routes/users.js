@@ -14,7 +14,7 @@ router.get("/login", async function (req, res, next) {
     "user": req.query.user,
     "pwd": req.query.pwd
   });
-  console.log("11行");
+  console.log(user);
   
   if (user) {
     res.send({
