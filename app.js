@@ -5,11 +5,12 @@ var cors = require('cors');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const routes = require("./routes");
+var app = express();
 let  startWebSocket  = require('./websocket/server')
 var server = http.createServer(app);
 var usersRouter = require('./routes/users');
 var http = require('http');
-var app = express();
+
 require('../websocket/server')(server);
 app.use(cors({
   origin: ["https://your-frontend.vercel.app"], // 允许的前端地址
