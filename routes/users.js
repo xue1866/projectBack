@@ -6,15 +6,16 @@ const router = express.Router();
 router.get("/login", async function (req, res, next) {
   console.log("登录", req.query);
   
-  console.log("user:",req.query.user);
-  console.log("pwd:",req.query.pwd);
+  console.log("user:",typeof req.query.user);
+  console.log("pwd:",typeof  req.query.pwd);
   console.log("9行");
   console.log("数据库字段:", Object.keys(usersModel.schema.obj));
+  console.log("数据库字段:",typeof (Object.keys(usersModel.schema.obj)[0]));
   let user = await usersModel.findOne({
     "user": req.query.user,
     "pwd": req.query.pwd
   });
-  console.log(user);
+  console.log("user:",user);
   
   if (user) {
     res.send({
