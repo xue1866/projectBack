@@ -12,7 +12,7 @@ var server = http.createServer(app);
 var usersRouter = require('./routes/users');
 
 
-require('../websocket/server')(server);
+require('./websocket/server')(server);
 app.use(cors({
   origin: ["https://your-frontend.vercel.app"], // 允许的前端地址
   credentials: true
