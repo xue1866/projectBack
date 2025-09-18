@@ -11,8 +11,8 @@ router.get("/login", async function (req, res, next) {
   console.log("9行");
   console.log("数据库字段:", Object.keys(usersModel.schema.obj));
   let user = await usersModel.findOne({
-    user: req.query.user,
-    pwd: req.query.pwd
+    "user": req.query.user,
+    "pwd": req.query.pwd
   });
   console.log("11行");
   
