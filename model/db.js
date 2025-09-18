@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://xuejiakang69_db_user:xue2005@cluster0.p7ceyb5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect("mongodb+srv://xuejiakang69_db_user:xue2005@cluster0.p7ceyb5.mongodb.net/project?retryWrites=true&w=majority&appName=Cluster0")
 .then(() => {
   console.log("✅ 数据库连接成功");
 })
