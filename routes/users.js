@@ -7,7 +7,7 @@ router.get("/login", async function (req, res, next) {
   console.log("登录", req.query);
   
   let user = await usersModel.findOne(req.query);
-  console.log(user);
+  console.log("user:",user);
   
   if (user) {
     res.send({
