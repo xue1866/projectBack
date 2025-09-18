@@ -6,12 +6,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const routes = require("./routes");
 let  startWebSocket  = require('./websocket/server')
-
+var server = http.createServer(app);
 var usersRouter = require('./routes/users');
-
+var http = require('http');
 var app = express();
-startWebSocket();
-app.use(cors());
+require('../websocket/server')(server);
+app.use(cors({
+  origin: ["https://your-frontend.vercel.app"], // 允许的前端地址
+  credentials: true
+}));
 // 启动 WebSocket 服务
 app.use('/', routes);
 

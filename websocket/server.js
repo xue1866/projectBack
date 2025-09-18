@@ -2,9 +2,9 @@ const WebSocket = require("ws");
 let chilents = []; //所有连接的客户端
 const { messagesModel } = require("../model/db");
 
-function startWebSocket() {
+function startWebSocket(server) {
   // websocket服务器监听
-  const socket = new WebSocket.Server({port:"8080"});
+  const socket = new WebSocket.Server({server});
 
   // 监听客户端的连接
   socket.on("connection", async (ws, req) => {
