@@ -1,14 +1,15 @@
 const mongoose = require("mongoose");
 
-mongoose
-  .connect("mongodb://127.0.0.1:27017/project")
-  .then(() => {
-    console.log("数据库连接成功");
-  })
-  .catch(() => {
-    console.log("数据库连接失败");
-  });
-
+mongoose.connect("mongodb+srv://xuejiakang69_db_user:<db_password>@cluster0.xg22ne5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
+  console.log("✅ 数据库连接成功");
+})
+.catch((err) => {
+  console.error("❌ 数据库连接失败:", err);
+});
 // 定义一个模型
 
 //用户
