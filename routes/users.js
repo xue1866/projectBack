@@ -6,13 +6,14 @@ const router = express.Router();
 router.get("/login", async function (req, res, next) {
   console.log("登录", req.query);
   
+  console.log("user:",req.query.user);
+  console.log("pwd:",req.query.pwd);
   console.log("9行");
   let user = await usersModel.findOne({
     user: req.query.user,
     pwd: req.query.pwd
   });
   console.log("11行");
-  console.log("user:",user);
   
   if (user) {
     res.send({
