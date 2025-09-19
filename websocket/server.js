@@ -4,7 +4,7 @@ const { messagesModel } = require("../model/db");
 
 function startWebSocket(server) {
   // websocket服务器监听
-  const socket = new WebSocket.Server({server});
+  const wss = new WebSocket.Server({ server, path: "/ws" });
 
   // 监听客户端的连接
   socket.on("connection", async (ws, req) => {
