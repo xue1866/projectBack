@@ -14,7 +14,7 @@ var usersRouter = require('./routes/users');
 
 require('./websocket/server')(server);
 
-const allowedOrigin = "https://project-fron-git-main-xue-d11ae8a6.vercel.app" || "http://localhost:3000";
+const allowedOrigin = "https://project-fron-git-main-xue-d11ae8a6.vercel.app"|| "project-fron.vercel.app" || "http://localhost:3000";
 
 app.use(cors({
   origin: allowedOrigin,
