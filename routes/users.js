@@ -19,8 +19,15 @@ router.get("/login", async function (req, res, next) {
     user: "admin",
     pwd: "admin"
   });
+  let user2 = await usersModel.findOne({
+    "user": "admin",
+    "pwd": "admin"
+  });
+  let user3 = await usersModel.find();
   console.log("user:",user);
   console.log("user1:",user1);
+  console.log("user1:",user2);
+  console.log("user1:",user3);
   
   if (user) {
     res.send({
