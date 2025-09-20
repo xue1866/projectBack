@@ -7,7 +7,7 @@ function startWebSocket(server) {
   const wss = new WebSocket.Server({ server, path: "/ws" });
 
   // 监听客户端的连接
-  socket.on("connection", async (ws, req) => {
+  wss.on("connection", async (ws, req) => {
     console.log("客户端连接");
 
     //获取发送者的id
