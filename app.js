@@ -13,7 +13,7 @@ var usersRouter = require('./routes/users');
 
 
 // require('./websocket/server')(server);
-startWebSocket(server);
+// startWebSocket(server);
 
 const allowedOrigin = "https://project-fron-git-main-xue-d11ae8a6.vercel.app"|| "project-fron.vercel.app" || "http://localhost:3000";
 
@@ -59,4 +59,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// module.exports = app;
+module.exports = app;
