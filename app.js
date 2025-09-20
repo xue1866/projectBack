@@ -15,10 +15,20 @@ var usersRouter = require('./routes/users');
 // require('./websocket/server')(server);
 // startWebSocket(server);
 
-const allowedOrigin = "https://project-fron-git-main-xue-d11ae8a6.vercel.app"|| "project-fron.vercel.app" || "http://localhost:3000";
+const allowedOrigins = [
+  "https://project-fron-git-main-xue-d11ae8a6.vercel.app",
+  "https://project-fron.vercel.app",
+  "http://localhost:3000"
+];
 
 app.use(cors({
-  origin: allowedOrigin,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS: " + origin));
+    }
+  },
   credentials: true
 }));
 // 启动 WebSocket 服务
