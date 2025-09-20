@@ -24,10 +24,10 @@ app.use(cors({
 // 启动 WebSocket 服务
 app.use('/', routes);
 
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`服务已启动: http://localhost:${PORT}`);
-});
+// const PORT = process.env.PORT || 3000;
+// server.listen(PORT, () => {
+//   console.log(`服务已启动: http://localhost:${PORT}`);
+// });
 
 
 // view engine setup
